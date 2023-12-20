@@ -1,0 +1,12 @@
+{
+	"auto_match_enabled": false,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"caret_style": "smooth",
+	"ensure_newline_at_eof_on_save": true,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": "all",
+	"preview_on_click": false,
+}
