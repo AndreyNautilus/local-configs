@@ -1,0 +1,15 @@
+[user]
+	name = Andrey Potapov
+	email = andrey.potapov@company.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nano
+[gpg]
+	program = gpg
+
+[includeIf "gitdir:~/git-other/"]
+	path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/git-work/"]
+	path = ~/.gitconfig-company
