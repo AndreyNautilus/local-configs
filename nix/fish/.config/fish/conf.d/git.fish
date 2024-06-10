@@ -20,7 +20,7 @@ abbr -a -g gs   "git switch"
 abbr -a -g gsm  "git switch main && git pull"
 abbr -a -g gsms "git switch master && git pull"
 
-abbr -a -g gf   "git commit --fixup HEAD~"
+abbr -a -g gf   "git commit --fixup=HEAD~"
 abbr -a -g ga   "git add"
 
 abbr -a -g gra  "git rebase --autosquash -i"
