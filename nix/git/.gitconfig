@@ -5,6 +5,7 @@
 	defaultBranch = main
 [core]
 	editor = nano
+	excludesFile = ~/.gitignore
 [gpg]
 	program = gpg
 

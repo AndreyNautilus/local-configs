@@ -1,0 +1,4 @@
+# user-global gitignore
+
+# python
+.venv
