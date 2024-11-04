@@ -8,4 +8,8 @@ https://fishshell.com/
    `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
 4. install `bobthefish` theme (https://github.com/oh-my-fish/theme-bobthefish):
    `omf install bobthefish`
-5. copy `.config/fish` to `~/.config/fish`
+5. link my config to the system:
+   ```bash
+   ln -s local-configs/nix/fish/.config/fish/conf.d/common/ ~/.config/fish/conf.d/common
+   ln -s local-configs/nix/fish/.config/fish/conf.d/_source_common.fish  ~/.config/fish/conf.d/_source_common.fish
+   ```

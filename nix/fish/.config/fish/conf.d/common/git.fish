@@ -7,6 +7,7 @@ abbr -a -g gss  "git status -s"
 
 abbr -a -g gp   "git pull"
 abbr -a -g gpo  "git push origin"
+abbr -a -g gpoh "git push origin HEAD"
 
 abbr -a -g --set-cursor=_CURSOR  gl   "git log --topo-order --color --decorate --oneline -10_CURSOR | awk '{print NR-1 \": \" \$0}'"
 abbr -a -g gl20 "git log --topo-order --color --decorate --oneline -20 | awk '{print NR-1 \": \" \$0}'"
