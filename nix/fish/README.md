@@ -10,7 +10,7 @@ https://fishshell.com/
    `omf install bobthefish`
 5. link my config to the system:
    ```bash
-   ln -s local-configs/nix/fish/.config/fish/conf.d/common/ ~/.config/fish/conf.d/common
-   ln -s local-configs/nix/fish/.config/fish/functions/common/ ~/.config/fish/functions/common
-   ln -s local-configs/nix/fish/.config/fish/conf.d/_source_common.fish  ~/.config/fish/conf.d/_source_common.fish
+   ln -s (pwd)/nix/fish/.config/fish/functions/*.fish ~/.config/fish/functions/
+   ln -s (pwd)/nix/fish/.config/fish/conf.d/common/ ~/.config/fish/conf.d/common
+   ln -s (pwd)/nix/fish/.config/fish/conf.d/_source_common.fish  ~/.config/fish/conf.d/_source_common.fish
    ```
