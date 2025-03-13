@@ -1,3 +1,3 @@
-for file in $(status dirname)/common/*.fish
+for file in (status dirname)/common/*.fish
     source $file
 end
