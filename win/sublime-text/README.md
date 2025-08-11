@@ -10,4 +10,5 @@ https://www.sublimetext.com/
     - Package Control
     - PowerShell
     - Pretty JSON
+    - fish
 4. Copy `Preferences.sublime-settings` to `C:\Users\andre\AppData\Roaming\Sublime Text\Packages\User`
