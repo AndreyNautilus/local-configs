@@ -1,0 +1,11 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.fontSize": 13,
+    "editor.rulers": [
+        100, 120
+    ],
+    "workbench.tree.indent": 10,
+    "files.trimTrailingWhitespace": true,
+    "explorer.confirmDelete": false,
+    "files.insertFinalNewline": true
+}
