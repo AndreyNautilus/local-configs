@@ -4,6 +4,7 @@
 
 - turn off `Automatically rearrange Spaces based on most recent use`: `System Settings` -> `Desktop & Dock` -> scroll down -> turn it off;
 - enable regular Function keys (F1 - F12): `System Settings` -> `Keyboard` -> `Keyboard Shortcuts...` button -> `Function Keys` tab -> turn on "Use F1, F2, etc. keys as standard function keys".
+- add home to Finder: open terminal -> `open /Users` (opens `/Users` in Finder) -> drag-n-drop my home folder to "Favourites" section.
 
 ## Apps
 
