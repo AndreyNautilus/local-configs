@@ -10,3 +10,6 @@ abbr -a -g  gpg_decr    gpg --decrypt
 
 abbr -a -g  find_exec   'find . -name "*.txt" -exec echo == {} \;'
 abbr -a -g  find_exec_grep  'find . -name "*.txt" -exec sh -c "echo {} && grep PATTERN {}" \;'
+
+
+abbr -a -g  grep_not    'grep -v'
