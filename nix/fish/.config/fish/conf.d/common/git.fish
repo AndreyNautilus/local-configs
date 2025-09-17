@@ -28,3 +28,6 @@ abbr -a -g gchp "git cherry-pick --no-commit"
 abbr -a -g gcp  "git cherry-pick --no-commit"
 
 abbr -a -g grpo "git remote prune origin"
+
+abbr -a -g git_subm_deinit "git submodule deinit -f --all"
+abbr -a -g git_subm_reinit "git submodule update --init"
