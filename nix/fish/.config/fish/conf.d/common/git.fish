@@ -16,8 +16,7 @@ abbr -a -g --set-cursor=_CURSOR gcm  "git checkout main_CURSOR && git pull"
 abbr -a -g gcms "git checkout master && git pull"
 
 abbr -a -g gs   "git switch"
-abbr -a -g --set-cursor=_CURSOR gsm  "git switch main_CURSOR && git pull"
-abbr -a -g gsms "git switch master && git pull"
+abbr -a -g gsm  "git switch (git rev-parse --abbrev-ref origin/HEAD | sed 's|origin/||') && git pull"
 
 abbr -a -g gf   "git commit --fixup=HEAD~"
 abbr -a -g ga   "git add"
