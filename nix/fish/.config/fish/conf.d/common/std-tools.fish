@@ -14,3 +14,4 @@ abbr -a -g  find_exec_grep  'find . -name "*.txt" -exec sh -c "echo {} && grep P
 
 # grep
 abbr -a -g  grep_not    'grep -v'
+abbr -a -g --set-cursor=_C  grep_recursive  'grep -r "_C" .'
