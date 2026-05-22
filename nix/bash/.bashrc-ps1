@@ -1,0 +1,40 @@
+# Define PS1 envvar
+# See: https://man7.org/linux/man-pages/man1/bash.1.html#PROMPTING
+
+# Colors
+PS1_CLR_GREEN='\e[38;5;2m'
+PS1_CLR_BLACKFG_GREENBG=$'\e[30;48;5;148m'
+PS1_CLR_BLACKFG_ORANGEBG=$'\e[30;48;5;214m'
+PS1_CLR_WHITEFG_REDBG=$'\e[48;5;160m'
+PS1_CLR_PURPLE_BOLD='\e[1;38;5;13m'
+PS1_CLR_REDFG_WHITEBG_BOLD='\e[1;38;5;160;48;5;231m'
+PS1_CLR_RESET='\e[0m'
+
+# Gather context
+PROMPT_COMMAND_LAST_STATUS='PS1_STATUS=$(if [ "$?" == "0" ]; then echo ""; else echo " ! "; fi)'
+PROMPT_COMMAND_GITBRANCH='PS1_GITBRANCH=$(git symbolic-ref --quiet --short HEAD 2>/dev/null)'
+PROMPT_COMMAND_GITBRANCH_COLOR='
+if [ -n "$PS1_GITBRANCH" ]; then {
+    if   ! (git diff --no-ext-diff --quiet --exit-code 2>/dev/null); then
+        PS1_GITBRANCH_CLR=$PS1_CLR_WHITEFG_REDBG
+    elif ! (git diff --cached --no-ext-diff --quiet --exit-code 2>/dev/null); then
+        PS1_GITBRANCH_CLR=$PS1_CLR_BLACKFG_ORANGEBG
+    else
+        PS1_GITBRANCH_CLR=$PS1_CLR_BLACKFG_GREENBG
+    fi
+} fi
+'
+PROMPT_COMMAND="\
+${PROMPT_COMMAND_LAST_STATUS}; \
+${PROMPT_COMMAND_GITBRANCH}; \
+${PROMPT_COMMAND_GITBRANCH_COLOR}"
+
+# The prompt
+PS1="\[${PS1_CLR_REDFG_WHITEBG_BOLD}\]"'${PS1_STATUS}'"${PS1_CLR_RESET}\
+[\
+\[${PS1_CLR_GREEN}\]\u\[${PS1_CLR_RESET}\]\
+@\
+\[${PS1_CLR_PURPLE_BOLD}\]\h\[${PS1_CLR_RESET}\] \
+\w \
+\["'${PS1_GITBRANCH_CLR}'"\]"'${PS1_GITBRANCH}'"${PS1_CLR_RESET}\
+]\$ "
