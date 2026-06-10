@@ -14,4 +14,12 @@ abbr -a -g  find_exec_grep  'find . -name "*.txt" -exec sh -c "echo {} && grep P
 
 # grep
 abbr -a -g  grep_not    'grep -v'
-abbr -a -g --set-cursor=_C  grep_recursive  'grep -r "_C" .'
+abbr -a -g --set-cursor=_C  grep_recursive  'grep --exclude-dir={.git,.venv,.mypy_cache,__pycache__} --recursive "_C" .'
+
+# mkdir
+abbr -a -g  mkd     'mkdir'
+abbr -a -g  mdk     'mkdir'
+abbr -a -g  mdkir   'mkdir'
+
+# du
+abbr -a -g  du_human_sum    'du -hs'

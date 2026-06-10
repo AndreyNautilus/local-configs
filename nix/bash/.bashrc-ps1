@@ -1,40 +1,48 @@
 # Define PS1 envvar
 # See: https://man7.org/linux/man-pages/man1/bash.1.html#PROMPTING
 
-# Colors
-PS1_CLR_GREEN='\e[38;5;2m'
-PS1_CLR_BLACKFG_GREENBG=$'\e[30;48;5;148m'
-PS1_CLR_BLACKFG_ORANGEBG=$'\e[30;48;5;214m'
-PS1_CLR_WHITEFG_REDBG=$'\e[48;5;160m'
-PS1_CLR_PURPLE_BOLD='\e[1;38;5;13m'
-PS1_CLR_REDFG_WHITEBG_BOLD='\e[1;38;5;160;48;5;231m'
-PS1_CLR_RESET='\e[0m'
+# Styles/Colors
+PS1_STYLE_GREEN='\[\e[38;5;2m\]'
+PS1_STYLE_PURPLE_BOLD='\[\e[1;38;5;13m\]'
+PS1_STYLE_REDFG_WHITEBG_BOLD='\[\e[1;38;5;160;48;5;231m\]'
+
+PS1_STYLE_RESET='\[\e[0m\]'
+
+PS1_CLR_BLACKFG_GREENBG='\e[30;48;5;148m'
+PS1_CLR_BLACKFG_ORANGEBG='\e[30;48;5;214m'
+PS1_CLR_WHITEFG_REDBG='\e[48;5;160m'
 
 # Gather context
-PROMPT_COMMAND_LAST_STATUS='PS1_STATUS=$(if [ "$?" == "0" ]; then echo ""; else echo " ! "; fi)'
-PROMPT_COMMAND_GITBRANCH='PS1_GITBRANCH=$(git symbolic-ref --quiet --short HEAD 2>/dev/null)'
-PROMPT_COMMAND_GITBRANCH_COLOR='
-if [ -n "$PS1_GITBRANCH" ]; then {
-    if   ! (git diff --no-ext-diff --quiet --exit-code 2>/dev/null); then
-        PS1_GITBRANCH_CLR=$PS1_CLR_WHITEFG_REDBG
-    elif ! (git diff --cached --no-ext-diff --quiet --exit-code 2>/dev/null); then
-        PS1_GITBRANCH_CLR=$PS1_CLR_BLACKFG_ORANGEBG
+function __ps1_last_status {
+    if [ "$?" == "0" ]; then
+        printf "";
     else
-        PS1_GITBRANCH_CLR=$PS1_CLR_BLACKFG_GREENBG
+        printf " ! ";
     fi
-} fi
-'
-PROMPT_COMMAND="\
-${PROMPT_COMMAND_LAST_STATUS}; \
-${PROMPT_COMMAND_GITBRANCH}; \
-${PROMPT_COMMAND_GITBRANCH_COLOR}"
+}
+
+function __ps1_git_branch {
+    git symbolic-ref --quiet --short HEAD 2>/dev/null
+}
+
+function __ps1_git_branch_color {
+    if [ -n "$(__ps1_git_branch)" ]; then {
+        if   ! (git diff --no-ext-diff --quiet --exit-code 2>/dev/null); then
+            printf $PS1_CLR_WHITEFG_REDBG
+        elif ! (git diff --cached --no-ext-diff --quiet --exit-code 2>/dev/null); then
+            printf $PS1_CLR_BLACKFG_ORANGEBG
+        else
+            printf $PS1_CLR_BLACKFG_GREENBG
+        fi
+    } fi
+}
 
 # The prompt
-PS1="\[${PS1_CLR_REDFG_WHITEBG_BOLD}\]"'${PS1_STATUS}'"${PS1_CLR_RESET}\
+PS1="${PS1_STYLE_REDFG_WHITEBG_BOLD}\$(__ps1_last_status)${PS1_STYLE_RESET}\
 [\
-\[${PS1_CLR_GREEN}\]\u\[${PS1_CLR_RESET}\]\
+${PS1_STYLE_GREEN}\u${PS1_STYLE_RESET}\
 @\
-\[${PS1_CLR_PURPLE_BOLD}\]\h\[${PS1_CLR_RESET}\] \
+${PS1_STYLE_PURPLE_BOLD}\h${PS1_STYLE_RESET} \
 \w \
-\["'${PS1_GITBRANCH_CLR}'"\]"'${PS1_GITBRANCH}'"${PS1_CLR_RESET}\
+\$(__ps1_git_branch_color)\$(__ps1_git_branch)${PS1_STYLE_RESET}\
 ]\$ "
