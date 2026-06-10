@@ -1,0 +1,9 @@
+# substring search by UP/DOWN keys
+#   Requires Bash >= 3.3.
+#   - bash=3.2 (default macos) doesn't work;
+#   - bash=5.1.8 works;
+#   Example: 'com' -- UP key -> 'git commit -am "..."'
+"\e[A": history-substring-search-backward
+"\e[B": history-substring-search-forward
+"\eOA": history-substring-search-backward
+"\eOB": history-substring-search-forward
