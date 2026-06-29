@@ -3,6 +3,7 @@
 
 # Styles/Colors
 PS1_STYLE_GREEN='\[\e[38;5;2m\]'
+PS1_STYLE_RED='\[\e[38;5;9m\]'
 PS1_STYLE_PURPLE_BOLD='\[\e[1;38;5;13m\]'
 PS1_STYLE_REDFG_WHITEBG_BOLD='\[\e[1;38;5;160;48;5;231m\]'
 
@@ -18,6 +19,12 @@ function __ps1_last_status {
         printf "";
     else
         printf " ! ";
+    fi
+}
+
+function __ps1_ssh_session {
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        printf "SSH:"
     fi
 }
 
@@ -42,6 +49,7 @@ PS1="${PS1_STYLE_REDFG_WHITEBG_BOLD}\$(__ps1_last_status)${PS1_STYLE_RESET}\
 [\
 ${PS1_STYLE_GREEN}\u${PS1_STYLE_RESET}\
 @\
+${PS1_STYLE_RED}\$(__ps1_ssh_session)${PS1_STYLE_RESET}\
 ${PS1_STYLE_PURPLE_BOLD}\h${PS1_STYLE_RESET} \
 \w \
 \$(__ps1_git_branch_color)\$(__ps1_git_branch)${PS1_STYLE_RESET}\
