@@ -1,4 +1,4 @@
-set -x PS1_DOCKER '[\[\e[38;5;2m\]\u\[\e[0m\]:\[\e[38;5;9m\]DOCKER\[\e[0m\]@\[\e[1;38;5;13m\]\h\[\e[0m\]]\$ '
+set -x PS1_DOCKER '[\[\e[38;5;2m\]\u\[\e[0m\]@\[\e[38;5;9m\]DOCKER:\[\e[0m\]\[\e[1;38;5;13m\]\h\[\e[0m\] \w ]\$ '
 
 abbr -a -g --set-cursor=% docker_run "docker run --rm -it \
 -v (pwd):/home/host/(basename (pwd)) \
