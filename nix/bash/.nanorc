@@ -1,0 +1,48 @@
+# Documentation: https://www.nano-editor.org/dist/v5/nano.html#Nanorc-Files
+
+# Automatically indent a newly created line to the same number of tabs
+# and/or spaces as the previous line (or as the next line if the previous line
+# is the beginning of a paragraph).
+set autoindent
+
+# Constantly display the cursor position on the status bar.
+# Note that this overrides quickblank.
+set constantshow
+
+# Draw a vertical stripe at the given column, to help judge the width of the text.
+# (The color of the stripe can be changed with set stripecolor.)
+set guidestripe 80
+
+# Save the last hundred search strings and replacement strings and
+# executed commands, so they can be easily reused in later sessions.
+set historylog
+
+# Display line numbers to the left of the text area.
+# (Any line with an anchor additionally gets a mark in the margin.)
+set linenumbers
+
+# Enable mouse support, so that mouse clicks can be used to place the cursor,
+# set the mark (with a double click), or execute shortcuts.
+set mouse
+
+# Use this color combination for line numbers.
+set numbercolor white,lightblack
+
+# Save the cursor position of files between editing sessions. The cursor position is remembered for the 200 most-recently edited files.
+set positionlog
+
+# Use this color combination for the vertical guiding stripe.
+# See set functioncolor for valid color names.
+set stripecolor ,lightblue
+
+# Use a tab size of number columns. The value of number must be greater than 0.
+# The default value is 8.
+set tabsize 4
+
+# Convert each typed tab to spaces — to the number of spaces
+# that a tab at that position would take up.
+set tabstospaces
+
+# Remove trailing whitespace from wrapped lines when automatic hard-wrapping occurs
+# or when text is justified.
+set trimblanks
