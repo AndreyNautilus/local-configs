@@ -1,0 +1,8 @@
+# tools
+alias la='ls -lah --color=yes'
+
+# git
+alias gss='git status -s'
+alias gd='git diff'
+alias gdh='git diff HEAD'
+alias gp='git pull'
