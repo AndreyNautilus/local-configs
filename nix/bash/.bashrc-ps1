@@ -1,5 +1,10 @@
 # Define PS1 envvar
 # See: https://man7.org/linux/man-pages/man1/bash.1.html#PROMPTING
+#
+# !! This PS1 is primarily meant to be used on remote servers,
+#    it might need some tweaking for proper local usage.
+#
+
 
 # Styles/Colors
 PS1_STYLE_GREEN='\[\e[38;5;2m\]'
