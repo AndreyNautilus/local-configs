@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/apotapov/.claude/statusline-command.sh",
+    "refreshInterval": 5
+  }
+}
