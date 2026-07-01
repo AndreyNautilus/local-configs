@@ -34,7 +34,12 @@ function __ps1_ssh_session {
 }
 
 function __ps1_git_branch {
-    git symbolic-ref --quiet --short HEAD 2>/dev/null
+    BRANCH="$(git symbolic-ref --quiet --short HEAD 2>/dev/null)"
+    if [ -n "$BRANCH" ]; then
+        printf " ⎇ $BRANCH "
+    else
+        printf ""
+    fi
 }
 
 function __ps1_git_branch_color {
@@ -57,5 +62,5 @@ ${PS1_STYLE_GREEN}\u${PS1_STYLE_RESET}\
 ${PS1_STYLE_RED}\$(__ps1_ssh_session)${PS1_STYLE_RESET}\
 ${PS1_STYLE_PURPLE_BOLD}\h${PS1_STYLE_RESET} \
 \w \
-\$(__ps1_git_branch_color) ⎇ \$(__ps1_git_branch) ${PS1_STYLE_RESET}\
+\$(__ps1_git_branch_color)\$(__ps1_git_branch)${PS1_STYLE_RESET}\
 ]\$ "
