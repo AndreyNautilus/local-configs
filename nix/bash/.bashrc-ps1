@@ -62,5 +62,5 @@ ${PS1_STYLE_GREEN}\u${PS1_STYLE_RESET}\
 ${PS1_STYLE_RED}\$(__ps1_ssh_session)${PS1_STYLE_RESET}\
 ${PS1_STYLE_PURPLE_BOLD}\h${PS1_STYLE_RESET} \
 \w \
-\$(__ps1_git_branch_color)\$(__ps1_git_branch)${PS1_STYLE_RESET}\
+\[\$(__ps1_git_branch_color)\]\$(__ps1_git_branch)${PS1_STYLE_RESET}\
 ]\$ "
