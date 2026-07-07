@@ -49,6 +49,9 @@ FILLED=$((CONTEXT_USAGE / 10)); EMPTY=$((10 - FILLED))
 printf -v FILL "%${FILLED}s"; printf -v PAD "%${EMPTY}s"
 BAR="${FILL// /█}${PAD// /░}"
 
+# Format cost
+COST_FMT=$(printf '$%.2f' "$COST")
+
 # Print everything
 echo -e "${CYAN}[$MODEL]${RESET} 📁 ${CURRENT_DIR/#$HOME/~}$GIT_BRANCH"
 echo -e "${BAR_COLOR}${BAR}${RESET} ${CONTEXT_USAGE}% | ${YELLOW}${COST_FMT}${RESET} "
