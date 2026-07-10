@@ -1,6 +1,10 @@
 #!/bin/bash
 # see: https://code.claude.com/docs/en/statusline#tips
 
+# Settings:
+# hide default branch name
+HIDE_DEFAULT_BRANCH=${HIDE_DEFAULT_BRANCH:-1}
+
 # Read JSON input from stdin
 input=$(cat)
 
@@ -28,6 +32,11 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
             BRANCH_COLOR='\033[30;48;5;214m' # orange bg: staged changes
         else
             BRANCH_COLOR='\033[30;48;5;148m' # green bg: clean
+        fi
+        if [ "${HIDE_DEFAULT_BRANCH}" != "0" ]; then
+            if [ "$BRANCH" == "master" ] || [ "$BRANCH" == "main" ]; then
+                BRANCH=""
+            fi
         fi
         GIT_BRANCH=" ${BRANCH_COLOR} ⎇ ${BRANCH} ${RESET}"
     fi

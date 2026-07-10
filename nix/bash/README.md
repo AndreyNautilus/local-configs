@@ -13,6 +13,8 @@ inspired by
     . ~/.bashrc-ps1
     ```
 
+Check the script for configuration options.
+
 ## aliases
 
 `.alias-personal` contains personal aliases (mostly mimic my fish abbreviations).

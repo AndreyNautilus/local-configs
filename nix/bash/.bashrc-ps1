@@ -5,6 +5,9 @@
 #    it might need some tweaking for proper local usage.
 #
 
+# Settings:
+# hide default branch name
+HIDE_DEFAULT_BRANCH=${HIDE_DEFAULT_BRANCH:-1}
 
 # Styles/Colors
 PS1_STYLE_GREEN='\[\e[38;5;2m\]'
@@ -16,14 +19,14 @@ PS1_STYLE_RESET='\[\e[0m\]'
 
 PS1_CLR_BLACKFG_GREENBG='\e[30;48;5;148m'
 PS1_CLR_BLACKFG_ORANGEBG='\e[30;48;5;214m'
-PS1_CLR_WHITEFG_REDBG='\e[48;5;160m'
+PS1_CLR_WHITEFG_REDBG='\e[0;97;48;5;160m'
 
 # Gather context
 function __ps1_last_status {
     if [ "$?" == "0" ]; then
-        printf "";
+        printf ""
     else
-        printf " ! ";
+        printf " ! "
     fi
 }
 
@@ -36,7 +39,11 @@ function __ps1_ssh_session {
 function __ps1_git_branch {
     BRANCH="$(git symbolic-ref --quiet --short HEAD 2>/dev/null)"
     if [ -n "$BRANCH" ]; then
-        printf " ⎇ $BRANCH "
+        if [ "${HIDE_DEFAULT_BRANCH}" != "0" ]; then
+            printf " ⎇ "
+        else
+            printf " ⎇ $BRANCH "
+        fi
     else
         printf ""
     fi
