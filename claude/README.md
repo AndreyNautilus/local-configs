@@ -8,6 +8,8 @@
 
 `cp statusline.sh ~/.claude/statusline.sh`
 
+Check the script for configuration options.
+
 ## Plugins
 
 - [Superpowers](https://claude.com/plugins/superpowers)
