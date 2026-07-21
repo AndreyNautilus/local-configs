@@ -23,3 +23,9 @@ abbr -a -g  mdkir   'mkdir'
 
 # du
 abbr -a -g  du_human_sum    'du -hs'
+
+# .. -> cd ../
+function abbr_multicd
+    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+end
+abbr --add dotdot --regex '^\.\.+$' --function abbr_multicd
