@@ -7,7 +7,12 @@
 
 # Settings:
 # hide default branch name
+#   HIDE_DEFAULT_BRANCH=1  - hide (default)
+#   HIDE_DEFAULT_BRANCH=0  - don't hide
 HIDE_DEFAULT_BRANCH=${HIDE_DEFAULT_BRANCH:-1}
+# customize host name
+#   HOST_NAME=\\h/$ROLE  - to get "host_name/role_name"
+HOST_NAME=${HOST_NAME:-\\h}
 
 # Styles/Colors
 PS1_STYLE_GREEN='\[\e[38;5;2m\]'
@@ -67,7 +72,7 @@ PS1="${PS1_STYLE_REDFG_WHITEBG_BOLD}\$(__ps1_last_status)${PS1_STYLE_RESET}\
 ${PS1_STYLE_GREEN}\u${PS1_STYLE_RESET}\
 @\
 ${PS1_STYLE_RED}\$(__ps1_ssh_session)${PS1_STYLE_RESET}\
-${PS1_STYLE_PURPLE_BOLD}\h${PS1_STYLE_RESET} \
+${PS1_STYLE_PURPLE_BOLD}${HOST_NAME}${PS1_STYLE_RESET} \
 \w \
 \[\$(__ps1_git_branch_color)\]\$(__ps1_git_branch)${PS1_STYLE_RESET}\
 ]\$ "
