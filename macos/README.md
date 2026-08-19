@@ -17,3 +17,7 @@
 1. fresh python3: `brew install python3` ([details](python.md))
 1. [Sublime Text](https://www.sublimetext.com/)
 	- copy configs from [`win` folder](../win/sublime-text) to `Library/Application Support/Sublime Text/Packages/User/`;
+1. wget, jq, yq, tree:
+	```bash
+	brew install wget jq yq tree
+	```
