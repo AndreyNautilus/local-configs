@@ -1,6 +1,8 @@
 # tools
 alias la='ls -lah --color=yes'
 alias diff='diff --color'
+alias lessf='less +F'
+
 if command -v bat > /dev/null; then
     # replacement for `cat`: https://github.com/sharkdp/bat
     alias ccat='bat --style=numbers --pager=never'

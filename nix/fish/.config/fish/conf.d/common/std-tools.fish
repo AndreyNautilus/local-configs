@@ -29,3 +29,7 @@ function abbr_multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
 end
 abbr --add dotdot --regex '^\.\.+$' --function abbr_multicd
+
+abbr -a -g lessf        'less +F'
+abbr -a -g less_f       'less +F'
+abbr -a -g less_follow  'less +F'
