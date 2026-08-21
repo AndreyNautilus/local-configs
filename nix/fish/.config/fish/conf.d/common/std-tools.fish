@@ -30,6 +30,12 @@ function abbr_multicd
 end
 abbr --add dotdot --regex '^\.\.+$' --function abbr_multicd
 
+# !! -> expand into last command
+function last_history_item
+  echo $history[1]
+end
+abbr -a !! --position anywhere --function last_history_item
+
 abbr -a -g lessf        'less +F'
 abbr -a -g less_f       'less +F'
 abbr -a -g less_follow  'less +F'
