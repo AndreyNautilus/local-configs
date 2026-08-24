@@ -12,6 +12,8 @@ function abbr_git_push_origin --description "git push origin CURRENT_BRANCH"
     echo "git push origin $CURRENT_BRANCH"
 end
 abbr -a gpo --function abbr_git_push_origin
+abbr -a --command git -- '--fwl' '--force-with-lease'
+abbr -a --command git -- '--force-w' '--force-with-lease'
 
 abbr -a -g --set-cursor=_CURSOR  gl   "git log --topo-order --color --decorate --oneline -10_CURSOR | awk '{print NR-1 \": \" \$0}'"
 abbr -a -g gl20 "git log --topo-order --color --decorate --oneline -20 | awk '{print NR-1 \": \" \$0}'"
