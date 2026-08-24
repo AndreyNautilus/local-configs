@@ -15,6 +15,22 @@ inspired by
 
 Check the script for configuration options.
 
+## iTerm2 integration
+
+[Shell integration](https://iterm2.com/documentation-shell-integration.html) enables lots of useful features in iTerm2 (macos-only).
+
+According to [the docs](https://iterm2.com/documentation-shell-integration.html#install-by-hand):
+1. download the script
+   ```bash
+   curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+   ```
+2. call it from `.bashrc`:
+   ```bash
+   if [ -f ~/.iterm2_shell_integration.bash ]; then
+       source ~/.iterm2_shell_integration.bash
+   fi
+   ```
+
 ## aliases
 
 `.alias-personal` contains personal aliases (mostly mimic my fish abbreviations).
