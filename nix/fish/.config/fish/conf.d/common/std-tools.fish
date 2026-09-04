@@ -24,6 +24,9 @@ abbr -a -g  mdkir   'mkdir'
 # du
 abbr -a -g  du_human_sum    'du -hs'
 
+# cat with syntax highlighting
+abbr -a -g  ccat 'bat --style=numbers --pager=never'
+
 # .. -> cd ../
 function abbr_multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
