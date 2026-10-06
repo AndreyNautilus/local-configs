@@ -58,5 +58,5 @@ According to [the docs](https://iterm2.com/documentation-shell-integration.html#
 
 |Nano|MacOS|Windows|Examples|
 |---|---|---|---|
-|`^`||`Ctrl`|`^X`(`Ctrl`+`x`) - exit|
-|`M-`||`Alt`|`M-6`(`Alt`+`6`) - copy selection|
+|`^`|`control ^`|`Ctrl`|`^X`(`Ctrl`/`control ^`+`x`) - exit|
+|`M-`|`esc` (click = press and release)|`Alt`|`M-6`(`Alt`+`6` or `esc` press, release + `6`) - copy selection|
