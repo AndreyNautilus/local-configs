@@ -9,7 +9,7 @@ abbr -a -g gp   "git pull"
 
 function abbr_git_push_origin --description "git push origin CURRENT_BRANCH"
     set CURRENT_BRANCH (git symbolic-ref --quiet --short HEAD 2>/dev/null)
-    echo "git push origin $CURRENT_BRANCH"
+    echo "git push origin --set-upstream $CURRENT_BRANCH"
 end
 abbr -a gpo --function abbr_git_push_origin
 abbr -a --command git -- '--fwl' '--force-with-lease'
