@@ -7,9 +7,13 @@ abbr -a -g gss  "git status -s"
 
 abbr -a -g gp   "git pull"
 
-function abbr_git_push_origin --description "git push origin CURRENT_BRANCH"
+function abbr_git_push_origin --description "git push origin CURRENT_BRANCH_WITH_UPSTREAM"
     set CURRENT_BRANCH (git symbolic-ref --quiet --short HEAD 2>/dev/null)
-    echo "git push origin --set-upstream $CURRENT_BRANCH"
+    set UPSTREAM (git rev-parse --abbrev-ref --symbolic-full-name "@{upstream}" 2>/dev/null)
+    if test -z "$UPSTREAM"
+        set UPSTREAM_FLAG "--set-upstream "
+    end
+    echo "git push origin $UPSTREAM_FLAG$CURRENT_BRANCH"
 end
 abbr -a gpo --function abbr_git_push_origin
 abbr -a --command git -- '--fwl' '--force-with-lease'
