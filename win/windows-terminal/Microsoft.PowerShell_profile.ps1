@@ -8,3 +8,6 @@ oh-my-posh init pwsh --config "$HOME\Documents\PowerShell\andrey-nautilus.omp.js
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# init fish-like abbreviations
+& "$HOME\Documents\PowerShell\abbreviations.ps1" -AbbreviationsPath "$HOME\Documents\PowerShell\abbreviations.d"
