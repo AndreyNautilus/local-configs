@@ -7,6 +7,8 @@
     gss = 'git status -s'
     gp  = 'git pull'
 
+    gpo = 'git push origin'
+
     gl  = 'git log --oneline -10'
 
     gsm = 'git switch main && git pull'
