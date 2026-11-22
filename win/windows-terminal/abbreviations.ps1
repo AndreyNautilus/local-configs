@@ -17,10 +17,10 @@ case-insensitive and may contain letters, digits, underscores, and hyphens.
 The first character must be a letter or an underscore.
 
 .EXAMPLE
-& 'C:\Projects\02\Abbreviations.ps1'
+& abbreviations.ps1
 
 .EXAMPLE
-& 'C:\Projects\02\Abbreviations.ps1' -AbbreviationsPath "$HOME\.config\powershell\abbreviations.d"
+& abbreviations.ps1 -AbbreviationsPath "$HOME\path\to\abbreviations.d"
 #>
 [CmdletBinding()]
 param(
