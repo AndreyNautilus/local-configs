@@ -1,3 +1,4 @@
+# Mostly reflect what I have for fish abbreviations (simplified).
 @{
     gd  = 'git diff'
     gdh = 'git diff HEAD'
