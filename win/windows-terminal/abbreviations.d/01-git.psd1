@@ -3,6 +3,8 @@
     gd  = 'git diff'
     gdh = 'git diff HEAD'
 
+    ga  = 'git add'
+
     gs  = 'git switch'
     gb  = 'git branch'
     gss = 'git status -s'
